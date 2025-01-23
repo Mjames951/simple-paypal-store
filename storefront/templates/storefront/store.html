@@ -2,5 +2,28 @@
 {% load static %}
 
 {% block content %}
+
+{% if message %}
+{{ message }}
+{% endif %}
+
 <h1>welcome to the store!</h1>
+
+{% for item in items %}
+
+<img src="{{ item.image.url }}">
+<h3>{{ item.name }}</h3>
+<p>${{ item.price }}</p>
+{% if item.description|length > 29 %}
+    <p>{{ item.description|slice:":30" }}...</p>
+{% else %}
+    <p>{{ item.description }}</p>
+{% endif %}
+
+{% empty %}
+
+<p>none... You'll have to wait for the next drop!</p>
+
+{% endfor %}
+
 {% endblock %}
