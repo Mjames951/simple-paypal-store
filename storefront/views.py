@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+def store(request):
+    return render(request, "storefront/store.html", {
+
+    })
+
+def checkout(request):
+    return render(request, "storefront/checkout.html", {
+        
+    })
