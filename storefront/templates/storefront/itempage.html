@@ -1,0 +1,15 @@
+{% extends 'storefront/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<img src="{{ item.image.url }}">
+<h3>{{ item.name }}</h3>
+<p>${{ item.price }}</p>
+<p>{{ item.description }}</p>
+
+<a href="{% url 'checkout' itemid=item.id %}">
+    <h1>BUY IT</h1>
+</a>
+
+{% endblock %}

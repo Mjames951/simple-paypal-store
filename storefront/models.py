@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 class Item(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     image = models.ImageField()
     price = models.DecimalField(max_digits=7, decimal_places=2)
     description = models.TextField(null=True)
