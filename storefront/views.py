@@ -21,3 +21,9 @@ def checkout(request, itemid):
     return render(request, "storefront/checkout.html", {
         "item": item,
     })
+
+def paymentSuccessful(request, itemid):
+    pass
+
+def paymentFailed(request, itemid):
+    pass
